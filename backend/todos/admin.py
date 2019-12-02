@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Todo
 
 class Todo_Admin(admin.ModelAdmin):  # add this
-    list_display = ('title', 'desc', 'complete') # add this
+    list_display = ('title', 'description', 'completed') # add this
 
 
 # Register your models here.

@@ -4,7 +4,7 @@ from .serializers import Todo_Serializer
 from .models import Todo
 
 class Todo_Viewset(viewsets.ModelViewSet):
-    queryset = Todo.objects.all().order_by('-title')
+    queryset = Todo.objects.all()
     serializer_class = Todo_Serializer
 
 # class User_Viewset( viewsets.ModelViewSet ):

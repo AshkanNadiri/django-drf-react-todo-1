@@ -9,5 +9,5 @@ router.register(r'todos', Todo_Viewset)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls)),
+    path('api/', include(router.urls)),
 ]
