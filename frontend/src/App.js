@@ -20,8 +20,8 @@ class App extends Component {
   }
   refreshList = () => {
     axios
-      .get("http://localhost:8000/api/todos/")
-      .then(res => this.setState({ todoList: res.data }))
+      .get("https://django-drf-todo-dec-2.herokuapp.com/api/todos/") <# my heroku url, Yours should be similar to this
+      .then(res => this.setState({ todoList: res.data.results }))
       .catch(err => console.log(err));
   };
   displayCompleted = status => {
@@ -91,17 +91,17 @@ class App extends Component {
     this.toggle();
     if (item.id) {
       axios
-        .put(`http://localhost:8000/api/todos/${item.id}/`, item)
+        .put(`https://django-drf-todo-dec-2.herokuapp.com/api/todos/${item.id}/`, item) #< Same here
         .then(res => this.refreshList());
       return;
     }
     axios
-      .post("http://localhost:8000/api/todos/", item)
+      .post("https://django-drf-todo-dec-2.herokuapp.com/api/todos/", item) #< Same here
       .then(res => this.refreshList());
   };
   handleDelete = item => {
     axios
-      .delete(`http://localhost:8000/api/todos/${item.id}`)
+      .delete(`https://django-drf-todo-dec-2.herokuapp.com/api/todos/${item.id}/`) #< Same here + `/`
       .then(res => this.refreshList());
   };
   createItem = () => {
